@@ -1,2 +1,2 @@
-ls /user/local
+ls /usr/local
 ls | tail -n2
