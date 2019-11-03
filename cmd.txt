@@ -1,1 +1,1 @@
-ls | head -n2
+ls | tail -n2
