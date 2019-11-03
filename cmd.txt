@@ -1,1 +1,1 @@
-ls | head -n6
+ls | head -n3
