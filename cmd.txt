@@ -1,1 +1,2 @@
+cat configer.txt
 ls *txt
