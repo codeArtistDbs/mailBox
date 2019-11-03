@@ -1,2 +1,2 @@
-ls /usr/local
+ls /usr/local/cuda
 ls | tail -n2
