@@ -1,2 +1,2 @@
-cat configer.txt
+cat configer.txt | tail
 ls *txt
