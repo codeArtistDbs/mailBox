@@ -1,3 +1,4 @@
+python3 getIP.py
 whoami
 pwd
 cat configer.txt | tail -n3
