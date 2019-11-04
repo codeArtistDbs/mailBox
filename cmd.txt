@@ -1,3 +1,4 @@
+whoami
 pwd
 cat configer.txt | tail -n3
 ls *txt
