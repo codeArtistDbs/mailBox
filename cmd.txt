@@ -1,3 +1,4 @@
+./evaluate.sh
 cat pet/train540.log | tail -n6
 ython3 getIP.py 
 whoami
