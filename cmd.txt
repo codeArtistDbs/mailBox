@@ -1,6 +1,8 @@
-cat pet/train540.log | tail -n5
+cat pet/train540.log | tail -n4
 ython3 getIP.py 
 whoami
 pwd
 cat configer.txt | tail -n3
 ls *txt
+cd pet && python3 tools/ssd/test_net.py
+  --cfg cfgs/ssd/mscoco_humanparts/mobilenet_v1/ssd_MV1-0.25-64HEAD-FL_540x960_s2x_RetinaFace.yaml
