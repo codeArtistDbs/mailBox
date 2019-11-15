@@ -1,4 +1,4 @@
-cat pet/train540.log | tail -n6
+cat pet/train540.log | tail -n8
 ython3 getIP.py 
 whoami
 pwd
