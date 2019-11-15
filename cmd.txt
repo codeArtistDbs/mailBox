@@ -1,4 +1,4 @@
-cat pet/train540.log | tail
+cat /home/dbs/pet/train540.log | tail
 ython3 getIP.py 
 whoami
 pwd
