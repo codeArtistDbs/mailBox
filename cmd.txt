@@ -1,4 +1,4 @@
-cat /home/dbs/retinaSsd540.txt | tail -n6
+cat /home/dbs/retinaSsd540.txt | tail -n11
 
 ./evaluate.sh 
 cat pet/train540.log | tail -n6
