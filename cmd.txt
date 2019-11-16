@@ -1,6 +1,4 @@
-./evaluate.sh
-
-cat /home/dbs/retinaSsd540.txt | tail -n20
+cat /home/dbs/retinaSsd540.txt | tail -n10
 
 ./evaluate.sh 
 cat pet/train540.log | tail -n6
