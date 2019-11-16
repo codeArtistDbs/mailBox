@@ -1,3 +1,5 @@
+cat /home/dbs/retinaSsd450.txt
+
 ./evaluate.sh 
 cat pet/train540.log | tail -n6
 ython3 getIP.py 
