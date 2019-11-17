@@ -1,4 +1,4 @@
-ls pet/*txt 
+ls pet/*log *log 
 cat /home/dbs/retinaSsd540.txt | tail -n20
 
 ./evaluate.sh 
