@@ -1,3 +1,5 @@
+cat pet/trainSsd960.log | tail 
+
 ls pet/*log *log 
 cat /home/dbs/retinaSsd540.txt | tail -n20
 
