@@ -1,3 +1,4 @@
+cat pet/trainSsd960pretrain.log | tail
 setTime=6.5
 
 /home/dbs/evaluate.sh & 
