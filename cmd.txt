@@ -1,3 +1,5 @@
+/home/dbs/evaluate.sh
+
 setTime=1.5
 
 ./evaluate.sh
