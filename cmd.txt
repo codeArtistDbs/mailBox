@@ -1,4 +1,3 @@
-ls
 cat pet/trainSsd960.log | tail 
 
 ls pet/*log *log 
