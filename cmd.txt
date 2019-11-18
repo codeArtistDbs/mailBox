@@ -1,4 +1,4 @@
-setTime=2
+setTime=1.5
 
 ./evaluate.sh
 
