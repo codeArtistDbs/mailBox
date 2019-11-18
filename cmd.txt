@@ -1,3 +1,5 @@
+setTime=1
+
 ./evaluate.sh
 
 cat pet/trainSsd960.log | tail 
