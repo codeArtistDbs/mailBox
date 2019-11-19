@@ -1,3 +1,4 @@
+setTime=1.5
 cat /home/dbs/retinaSsd.txt | tail 
 
 
