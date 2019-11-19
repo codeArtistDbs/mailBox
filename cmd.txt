@@ -1,3 +1,4 @@
+setTime=6.5
 cat pet/trainSsd960pretrain.log | tail
 
 cat /home/dbs/retinaSsd.txt | tail -n20
