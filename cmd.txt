@@ -1,5 +1,4 @@
-setTime=1.5
-cat /home/dbs/retinaSsd.txt | tail 
+cat /home/dbs/retinaSsd.txt | tail -n20
 
 
 /home/dbs/evaluate.sh & 
