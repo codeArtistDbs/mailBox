@@ -1,3 +1,4 @@
+ls *txt
 /home/dbs/evaluate.sh &
 
 setTime=6.5
