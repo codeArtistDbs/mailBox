@@ -1,4 +1,4 @@
-ll *txt -t
+ls *txt -t
 /home/dbs/evaluate.sh &
 cat pet/trainSsd960pretrain.log | tail
 
