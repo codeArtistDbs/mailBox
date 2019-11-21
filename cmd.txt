@@ -1,1 +1,1 @@
-ls *txt -t
+ls *txt -t | head
