@@ -8,9 +8,7 @@ cat /home/dbs/retinaSsd.txt | tail -n20
 cat pet/trainSsd960.log | tail 
 
 ls pet/*log *log 
-cat /home/dbs/retinaSsd540.txt | tail -n20
-
-./evaluate.sh 
+cat /home/dbs/retinaSsd540.txt | tail -n20 
 cat pet/train540.log | tail -n6
 ython3 getIP.py 
 whoami
