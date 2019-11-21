@@ -1,1 +1,2 @@
+nvidia-smi
 ls *txt -t | head
