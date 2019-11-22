@@ -1,2 +1,4 @@
+cat /home/dbs/evalPHF.txt | tail -n15
+
 ./evaluate.sh
 ls *txt -t | head
