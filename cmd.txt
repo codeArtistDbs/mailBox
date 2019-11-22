@@ -1,2 +1,2 @@
-nvidia-smi
+./evaluate.sh
 ls *txt -t | head
