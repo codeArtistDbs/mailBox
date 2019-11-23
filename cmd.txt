@@ -9,6 +9,6 @@ cat evalPHF.txt | tail  -n18
 ls *txt -t
 ./evaluate.sh &
 
-cat /home/dbs/retinaSsdPHFwh.txt | tail -n8
+cat /home/dbs/retinaSsdPHFwh.txt | tail -n8  
 ./evaluate.sh
 ls *txt -t | head   
