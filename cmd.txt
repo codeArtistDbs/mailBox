@@ -1,3 +1,4 @@
+ls pet/tools/ssd
 cat evalPHF.txt | tail  -n18
 ls *txt -t
 ./evaluate.sh &
