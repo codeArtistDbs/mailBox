@@ -1,3 +1,3 @@
-cat /home/dbs/evalPHF.txt | tail -n18
+cat /home/dbs/retinaSsdPHFwh.txt | tail -n8
 ./evaluate.sh
 ls *txt -t | head
