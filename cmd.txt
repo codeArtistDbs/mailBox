@@ -1,3 +1,4 @@
+ls *txt -t
 ./evaluate.sh &
 
 cat /home/dbs/pet/evaluations/retinaPHF10.txt | tail -n20
