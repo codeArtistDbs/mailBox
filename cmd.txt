@@ -1,3 +1,4 @@
+ls *txt -t
 ./evaluate.sh &
 
 cat /home/dbs/retinaSsdPHFwh.txt | tail -n8
