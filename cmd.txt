@@ -1,4 +1,4 @@
-ls pet/*txt
+ls *txt
 evaluations
 
 cat /home/dbs/pet/evaluations/retinaPHF4.txt | tail -n20
@@ -9,4 +9,4 @@ ls *txt -t
 
 cat /home/dbs/retinaSsdPHFwh.txt | tail -n8
 ./evaluate.sh
-ls *txt -t | head 
+ls *txt -t | head   
