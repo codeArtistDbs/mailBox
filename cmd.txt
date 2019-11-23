@@ -1,4 +1,4 @@
-ls *txt
+cat retinaSsdPHFwhGoodAnchor2.txt | tail 
 evaluations
 
 cat /home/dbs/pet/evaluations/retinaPHF4.txt | tail -n20
