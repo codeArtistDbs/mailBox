@@ -1,4 +1,5 @@
-ls pet/evaluations
+ls pet/*txt
+evaluations
 
 cat /home/dbs/pet/evaluations/retinaPHF4.txt | tail -n20
 cat  pet/cfgs/ssd/mscoco_humanparts/mobilenet_v1/ssd_MV1-0.25-retinaSsdPersonHeadFace.yaml  | tail  -n18
