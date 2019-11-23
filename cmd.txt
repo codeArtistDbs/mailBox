@@ -1,4 +1,4 @@
-ls pet/tools/ssd
+cat pet/tools/ssd/test_net.py | tail  -n18
 cat evalPHF.txt | tail  -n18
 ls *txt -t
 ./evaluate.sh &
