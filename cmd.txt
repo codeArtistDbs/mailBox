@@ -1,3 +1,5 @@
+cat retinaSsdPHFwhGoodAnchor2.txt | tail 
+
 cat /home/dbs/pet/evaluations/retinaPHF10.txt | tail -n20
 
 cat retinaSsdPHFwhGoodAnchor2.txt | tail 
