@@ -1,3 +1,4 @@
+./evaluate.sh
 cat /home/dbs/pet/evaluations/retinaPHF40.txt | tail -n20
 
 cat retinaSsdPHFwhGoodAnchor2.txt | tail 
