@@ -1,4 +1,4 @@
-cat evalPHF.txt |tail -n20
+cat  pet/cfgs/ssd/mscoco_humanparts/mobilenet_v1/ssd_MV1-0.25-retinaSsdPersonHeadFace.yaml | Head -n20
 ./evaluate.sh
 cat /home/dbs/pet/evaluations/retinaPHF40.txt | tail -n20
 
@@ -13,4 +13,4 @@ ls *txt -t
 
 cat /home/dbs/retinaSsdPHFwh.txt | tail -n8  
 ./evaluate.sh
-ls *txt -t | head   
+ls *txt -t | head 
