@@ -1,3 +1,4 @@
+cat evalPHF.txt |tail -n20
 ./evaluate.sh
 cat /home/dbs/pet/evaluations/retinaPHF40.txt | tail -n20
 
