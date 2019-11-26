@@ -1,4 +1,4 @@
-ls
+cat pet/logs/trainFcosPHFmb025_13w.txt | tail
 
 cat  pet/cfgs/ssd/mscoco_humanparts/mobilenet_v1/ssd_MV1-0.25-retinaSsdPersonHeadFace.yaml | tail -n30
 ./evaluate.sh
