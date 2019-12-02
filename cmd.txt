@@ -1,4 +1,4 @@
-ls
+pwd
 
 cat pet/logs/trainFcosPHFmb025_13w.txt | tail
 
