@@ -1,6 +1,6 @@
-nvidia-smi
-
 sensors
+
+Nvidia-smi
 
 cd apex && python setup.py install --cuda_ext --cpp_ext
 
