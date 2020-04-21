@@ -1,3 +1,6 @@
+sensors
+
+
 cd apex && python setup.py install --cuda_ext --cpp_ext
 
 cat pet/logs/trainFcosPHFmb025_13w.txt | tail
