@@ -1,3 +1,11 @@
+xrat8-gv 服务器GPU状态（2026-08-21 19:42):
+- RTX 5000 Ada, 温度83C, 功耗235W/250W, 利用率96%
+- 显存25767MiB/32760MiB 已用
+- 进程: PID 1335041 VLLM::EngineCore (24490MiB) + PID 2365423 python /workspace/projects/pipeline.py (1254MiB, 已跑2小时07分)
+
+训练进度日志未能读到：PID 2365423 的fd访问被拒绝（可能跑在docker容器内，且无docker API权限查看），/local/mnt/workspace/dbs/blobdettf1_migrated/logs/ 下的train_lightweight_training*.txt都是8月12日的旧文件，非本次运行产生。需要更多权限或该进程的实际日志路径才能查看具体进度。
+
+-----------
 训练任务进度（2026-08-21 18:39):
 - 进程: PID 1215380, 已跑24分17秒, 日志 train_lightweight_training5.txt
 - 当前: Epoch 1, Batch 800/1454
