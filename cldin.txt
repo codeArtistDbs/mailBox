@@ -5,3 +5,14 @@ xrat8-gv服务器 用我的账号可以免密ssh， 你能查到它上面执行�
 请用中文和我交流 
 xrat8-gv服务器 用我的账号可以免密ssh， 你能查到它上面执行的GPU任务的运行日志/local/mnt/workspace/dbs/data/logs/iter_blobext1.txt吗
 本机GPU任务的运行日志 /tmp/migrate_run_logs/migrate_codes_run1.log 你也能查看吧
+---------> 
+ 两边的日志都能看到，情况如下：
+
+**远程 xrat8-gv（`/local/mnt/workspace/dbs/data/logs/iter_blobext1.txt`）**
+- 是分割（segmentation）任务，走完了 smoke test，正处于 lightweight training 阶段（`train_lightweight_training1.txt`），当前是 E0, Batch 7/384，IoU 从 sanity check 的 0.73 起步。
+
+**本机（`/tmp/migrate_run_logs/migrate_codes_run1.log`）**
+- 是 blobdet（目标检测）任务，也过了 sanity check，目前在 lightweight training 阶段（`train_lightweight_training6.txt`），已跑到第 5/22 epoch，mAP 0.226，lr 已衰减到 0.0002。
+
+两个任务都在正常训练中，没有报错。需要我继续跟进哪个任务的进度，还是要做别的检查？
+---------
