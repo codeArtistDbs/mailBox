@@ -1,3 +1,7 @@
 请用中文和我交流 
 xrat8-gv服务器 用我的账号可以免密ssh， 你能查到它上面执行的GPU任务的运行日志/local/mnt/workspace/dbs/data/logs/iter_blobext1.txt吗
 本机GPU任务的运行日志 /tmp/migrate_run_logs/migrate_codes_run1.log 你也能查看吧
+你好
+请用中文和我交流 
+xrat8-gv服务器 用我的账号可以免密ssh， 你能查到它上面执行的GPU任务的运行日志/local/mnt/workspace/dbs/data/logs/iter_blobext1.txt吗
+本机GPU任务的运行日志 /tmp/migrate_run_logs/migrate_codes_run1.log 你也能查看吧
