@@ -1,3 +1,10 @@
+训练任务进度（2026-08-21 18:39):
+- 进程: PID 1215380, 已跑24分17秒, 日志 train_lightweight_training5.txt
+- 当前: Epoch 1, Batch 800/1454
+- loss_cls: 0.155, loss_box: 0.704, loss_dfl: 0.2, sum: 1.06
+- lr=0.001, gpu_util: 27%, 显存: 18.5GB (56.6%)
+
+-----------
 GPU状态（2026-08-21 18:39):
 - RTX 5000 Ada, 温度71C, 功耗162W/250W, 利用率27%
 - 显存18885MiB/32760MiB 已用
