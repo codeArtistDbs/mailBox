@@ -1,3 +1,18 @@
+xrat8-gv 服务器 GPU 训练任务进展（读取 /local/mnt/workspace/dbs/data/logs/iter_blobext0.txt 最新内容）：
+
+任务：ai_flow AutoML Update 工作流，为 LED 光点分割网络实施 PLAN1 改进方案。
+基线：IoU 0.735~0.766, Recall 0.827~0.841, FPR 0.105~0.133, 推理 0.5ms。
+
+最新进展：
+1. QNN 模型转换成功（qnn2.24.0），量化模型已生成
+2. 设备端可部署性测试通过：推理耗时 0.219ms（远低于 6.3ms 阈值）
+3. 已进入正式 "lightweight training" 训练阶段（384 batch/epoch，共45个评估步）
+   - 目前进度：5/45
+   - 当前指标：IoU 0.644, Recall 0.726, FPR 0.149, score 119
+   - train_loss/eval_loss 持续下降，指标正稳步逼近基线
+
+结论：训练仍在进行中，尚未跑完（45步中完成5步），暂无最终对比结果，趋势良好。
+-----------
 训练是否完成？（2026-08-21 19:47)
 
 【本机】未训完，仍在跑：进程已运行3h11m，当前 Epoch 11, Batch 700/1454（据/tmp/migrate_run_logs显示总共22个epoch，约完成一半）。
