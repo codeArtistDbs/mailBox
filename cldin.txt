@@ -17,3 +17,32 @@ xrat8-gv服务器 用我的账号可以免密ssh， 你能查到它上面执行�
 两个任务都在正常训练中，没有报错。需要我继续跟进哪个任务的进度，还是要做别的检查？
 ---------
 xrat8-gv上那个，概述下日志里的实验计划和结果
+---------> 
+ 我把整个远程日志（1866行）梳理了一遍，这是一次 AI Flow 自动化"迭代优化"流程（debug-automl-update-blobext1），目标和各轮实验结果如下：
+
+**任务目标 / 基线**
+在 128×128 灰度短曝光图像（XR/AR 手柄相机）上做 LED 光点的二分类像素级分割（背景+前景两通道，不含 heatmap 回归或 Joint2D 输入）。
+评分公式：`score = 100×IoU + 90×Recall − 60×FPR − 10×推理时延(ms)`
+当前基线：**IoU 0.766, Recall 0.841, FPR 0.105, 推理 0.33ms, score 140.951**（需同时满足 IoU>0.7、Recall>0.75、FPR<0.14、推理≤0.6ms 才算合格）。
+
+**Iteration 0 — 视角：模型网络结构**
+- PLAN1：encoder 在8×8截断，去掉最深的下采样/上采样对以降延迟 → sanity check通过(IoU 0.728)，进入full training，最终 IoU 0.759/Recall 0.836/FPR 0.109/推理0.199ms/score 142.593，但被判定"相比本轮内部检查点没有变得更好，实验不成功"
+- PLAN2：剪掉每个heavy下采样block冗余的最后一层卷积 → sanity/lightweight check均通过
+- PLAN3：把前两个方案的有效改进全部合并 → sanity/lightweight check均通过
+- 结果：本轮结束后基线**未更新**，仍是134.927/140.951
+
+**Iteration 1 — 视角：算法/pipeline**
+- PLAN1：仅在验证集上校准前景判定阈值 → sanity check通过(两次attempt)
+- PLAN2：用类别平衡交叉熵+前景soft Dice替代普通交叉熵 → sanity check表现很好(IoU最高到0.837, Recall 0.9)
+- 结果：full training后FPR升到0.174，超过阈值0.161，判定"lightweight check失败，提前停止"，本轮**无方案被采纳**
+
+**Iteration 2 — 视角：数据在线增强**
+- PLAN1：affine增强中mask改用nearest-neighbor插值保持对齐 → sanity check通过(两次attempt)
+- PLAN2：恢复"index-aware"四视图采样 → sanity check通过
+- 结果：lightweight training后score降到132.446(<136.650)，判定失败，提前停止，**无方案被采纳**
+
+**Iteration 3 — 视角：模型网络结构（第二轮，进行中）**
+- PLAN1：用可学习的全分辨率depthwise refinement head替代logits插值，细化LED边界 → sanity check通过(IoU 0.74)，目前正在跑lightweight training（train_lightweight_training1.txt，E0 Batch 7/384），还没有结果
+
+**总体结论**：整个日志跑了4轮迭代、7个不同方案，几乎每个方案在sanity check阶段都能达标，但到lightweight/full training阶段普遍出现FPR升高或综合score下降，所以基线从头到尾都停留在140.951没被真正超越/采纳。当前第4轮的refinement head方案仍在训练中，还未见结果。
+---------
