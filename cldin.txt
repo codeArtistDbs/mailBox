@@ -47,3 +47,25 @@ xrat8-gv上那个，概述下日志里的实验计划和结果
 **总体结论**：整个日志跑了4轮迭代、7个不同方案，几乎每个方案在sanity check阶段都能达标，但到lightweight/full training阶段普遍出现FPR升高或综合score下降，所以基线从头到尾都停留在140.951没被真正超越/采纳。当前第4轮的refinement head方案仍在训练中，还未见结果。
 ---------
 xrat8-gv上那个，概述下日志里的实验计划和结果
+---------> 
+ 看起来您可能没收到上一条回复，我把整理好的结果再贴一次：
+
+**任务与基线**（xrat8-gv 上的 debug-automl-update-blobext1 流程，日志 `/local/mnt/workspace/dbs/data/logs/iter_blobext1.txt`，共1866行）
+
+目标：优化一个轻量级 PyTorch 模型，对128×128灰度短曝光图像做LED光点的二分类像素分割（背景/前景两通道，不含heatmap回归或Joint2D输入）。
+
+评分公式：`score = 100×IoU + 90×Recall − 60×FPR − 10×推理时延(ms)`
+基线指标：**IoU 0.766, Recall 0.841, FPR 0.105, 推理0.33ms, score 140.951**
+达标线：IoU>0.7、Recall>0.75、FPR<0.14、推理≤0.6ms，且score必须超过基线才算成功。
+
+**四轮迭代结果：**
+
+| 迭代 | 优化视角 | 方案 | 结果 |
+|---|---|---|---|
+| Iter 0 | 模型网络结构 | PLAN1截断encoder深度、PLAN2剪冗余卷积、PLAN3合并两者 | 均通过sanity/lightweight check，但PLAN1 full training后score(142.593)未超内部对照，判定不成功；基线**未更新** |
+| Iter 1 | 算法/pipeline | PLAN1校准前景阈值、PLAN2用class-balanced CE+Dice loss替代普通CE | PLAN2 sanity check表现最好(IoU 0.837)，但full training后FPR升到0.174超阈值，**提前停止，未采纳** |
+| Iter 2 | 数据在线增强 | PLAN1 mask插值改nearest-neighbor、PLAN2恢复index-aware四视图采样 | lightweight training后score降到132.446，**判定失败，提前停止** |
+| Iter 3 | 模型网络结构(第二轮) | PLAN1用可学习depthwise refinement head替代logits插值 | sanity check通过(IoU 0.74)，**目前仍在lightweight training中，尚无最终结果** |
+
+**结论**：跑了4轮、7个方案，几乎所有方案在sanity check阶段都达标，但到lightweight/full training阶段普遍因FPR升高或综合score下降被判定失败，基线从头到尾停留在140.951未被真正超越。当前第4轮方案仍在训练，还未出结果。
+---------
