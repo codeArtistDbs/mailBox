@@ -117,3 +117,16 @@ xrat8-gv（分割任务，AI Flow自动优化流程）最好那个各精度指�
 相比最初基线（IoU 0.766, Recall 0.841, FPR 0.105, 0.33ms, score 140.951），IoU提升约4.2个百分点，Recall提升约4.6个百分点，FPR降低约0.005，推理时延也从0.33ms降到0.29ms，综合score提升了约10.8分。
 ---------
 xrat8-gv最后一个实验结果是啥？本机的检测训练到哪了
+---------> 
+ **xrat8-gv 最后一个实验结果**（第8轮·数据增强视角·PLAN2「用scale-relative bounded translation替代极端不受限的Joint2D裁剪扰动」）：
+- lightweight check: IoU 0.774, Recall 0.863, FPR 0.117, score 145.147 → 通过
+- **full training最终结果**: IoU **0.808**, Recall **0.887**, FPR **0.0999**, 推理0.29ms, **score 151.762**（相比进入本轮前的151.010有小幅提升，已被采纳为最新基线）
+- 之后日志停在09:59（State_Update完成），暂无新内容，看起来在准备/等待Iteration 9的下一轮方案。
+
+**本机检测训练进度**：已经从lightweight阶段进入 **full training**，目前跑到 **checkpoint 2/37**：
+- ckpt 0: score 62.6, mAP 0.463, Recall 0.942, FPR 0.053
+- ckpt 1: score 11.2, mAP 0.147（骤降）, Recall 0.644, FPR 0.742
+- ckpt 2: score 26.6, mAP 0.282, Recall 0.763, FPR 0.768
+
+目前数值还在大幅波动、明显低于初始模型（mAP 0.519, Recall 0.978, FPR 0.0542），大概还在训练初期的不稳定阶段，尚未收敛，需要继续观察后面的checkpoint走势。
+---------
